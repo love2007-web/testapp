@@ -2,8 +2,13 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
+import Edit from './Edit' // Import the Edit component
+
 
 const Dashboard = () => {
+  const [editPostId, setEditPostId] = useState(null); // State variable to store the ID of the post to be edited
+
+
   const onSubmit = (values) => {
     axios.post("http://localhost:1234/view-post", values).then((res) => {
       // console.log(res);
@@ -12,6 +17,12 @@ const Dashboard = () => {
     })
   }
 
+  const handleEdit = (postId) => {
+    console.log("Edit button clicked for post ID:", postId);
+    setEditPostId(postId); // Set the post ID in the state variable
+    // navigate("/edit")
+
+  };
 
   const navigate = useNavigate()
   const [currUser, setCurrUser] = useState("");
@@ -77,14 +88,16 @@ const Dashboard = () => {
                 <h6>{post.username}</h6>
                 <p className='fs-5'>{post.content}</p>
                 <div className='d-flex justify-content-around'>
-                <button className='btn btn-success'>Edit</button>
-                <button className='btn btn-danger'>Delete</button>
+                  <button className='btn btn-success' onClick={() => handleEdit(post.id)}>Edit</button>
+                  <button className='btn btn-danger'>Delete</button>
                 </div>
               </div>
             </div>
           ))
         }
 
+
+        {editPostId && <Edit postId={editPostId} />}
       </div>
 
     </>
