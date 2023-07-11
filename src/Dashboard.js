@@ -16,11 +16,22 @@ const Dashboard = () => {
       console.log(err);
     })
   }
+  const logout = ()=>{
+    axios.get("http://localhost:1234/signin")
+      .then((res) => {
+        console.log(res);
+        console.log("Logout successful");
+        // navigate("/login");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   const handleEdit = (postId) => {
     console.log("Edit button clicked for post ID:", postId);
     setEditPostId(postId); // Set the post ID in the state variable
-    // navigate("/edit")
+    navigate(`/edit/${postId}`)
 
   };
 
@@ -31,7 +42,6 @@ const Dashboard = () => {
   useEffect(() => {
     axios.get("http://localhost:1234/signin")
       .then((res) => {
-        // console.log(res.data);
         if (!res.data.username) {
           alert("No user");
           navigate("/login");
@@ -42,8 +52,8 @@ const Dashboard = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
-
+  }, [navigate]);
+  
   const { handleSubmit, handleChange, errors, touched, handleBlur, values } = useFormik({
     enableReinitialize: true, // Add this option
     initialValues: {
@@ -57,10 +67,10 @@ const Dashboard = () => {
 
   return (
     <>
-      <h1>Welcome to your Dashboard {currUser}</h1>
+      <h1>Welcome to your Dashboard {currUser}</h1> <button onClick={logout} className='btn btn-danger'>Log Out</button>
       <form action='submit' onSubmit={handleSubmit} className='align-items-center'>
         <input type="text" name='content' onChange={handleChange} className='border border-black rounded mx-2' />
-        <button className='btn btn-success'>Post</button>
+        <button type='submit' className='btn btn-success'>Post</button>
       </form>
       <div>
         {

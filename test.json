@@ -1,0 +1,103 @@
+{
+  "create": [
+    {
+      "username": "Blaze",
+      "email": "blaze@gmail.com",
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "username": "Blaze",
+      "email": "blaze@gmail.com",
+      "password": "12345678",
+      "id": 2
+    },
+    {
+      "content": "HELLO GUYS JOE ARE YOU DOING TO DAY HOPE ALL IS WEKK?",
+      "id": 3
+    },
+    {
+      "content": "",
+      "id": 4
+    }
+  ],
+  "signin": {
+    "username": "Blaze",
+    "email": "blaze@gmail.com",
+    "password": "12345678",
+    "id": 1
+  },
+  "create-post": [],
+  "view-post": [
+    {
+      "content": "test",
+      "username": "Blaze",
+      "id": 1
+    },
+    {
+      "content": "test 2",
+      "username": "Blaze",
+      "id": 2
+    },
+    {
+      "content": "test 3",
+      "username": "Blaze",
+      "id": 3
+    },
+    {
+      "content": "test 4",
+      "username": "Blaze",
+      "id": 4
+    },
+    {
+      "content": "test 5",
+      "username": "Blaze",
+      "id": 5
+    },
+    {
+      "content": "test 5",
+      "username": "Blaze",
+      "id": 6
+    },
+    {
+      "content": "biyaya",
+      "username": "Blaze",
+      "id": 7
+    },
+    {
+      "content": "biyaya",
+      "username": "Blaze",
+      "id": 8
+    },
+    {
+      "content": "biyaya",
+      "username": "Blaze",
+      "id": 9
+    },
+    {
+      "content": "biyaya",
+      "username": "Blaze",
+      "id": 10
+    },
+    {
+      "content": "biyaya",
+      "username": "Blaze",
+      "id": 11
+    },
+    {
+      "content": "biyaya",
+      "username": "Blaze",
+      "id": 12
+    },
+    {
+      "content": "biyaya",
+      "username": "Blaze",
+      "id": 13
+    },
+    {
+      "content": "biyaya",
+      "username": "Blaze",
+      "id": 14
+    }
+  ]
+}
