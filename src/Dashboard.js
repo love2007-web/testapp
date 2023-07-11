@@ -31,7 +31,7 @@ const Dashboard = () => {
   const handleEdit = (postId) => {
     console.log("Edit button clicked for post ID:", postId);
     setEditPostId(postId); // Set the post ID in the state variable
-    navigate(`/edit/${postId}`)
+    navigate(`/edit`)
 
   };
 

@@ -1,6 +1,8 @@
 import React from 'react'
+import { useParams } from 'react-router-dom';
 
-const Edit = (postId) => {
+const Edit = () => {
+  const postId = useParams()
     console.log(postId);
 
   return (
